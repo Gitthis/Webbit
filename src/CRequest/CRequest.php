@@ -3,6 +3,8 @@
  * Parse the request and identify controller, method and arguments.
  *
  * @package WebbitCore
+ *
+ *
  */
 class CRequest {
 

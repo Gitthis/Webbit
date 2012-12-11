@@ -2,6 +2,7 @@
 /**
  * Standard controller layout.
  * 
+ *
  * @package WebbitCore
  */
 class CCIndex implements IController {
