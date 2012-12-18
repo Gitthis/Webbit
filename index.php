@@ -5,7 +5,7 @@
 define('WEBBIT_INSTALL_PATH', dirname(__FILE__));
 define('WEBBIT_SITE_PATH', WEBBIT_INSTALL_PATH . '/site');
 
-require(WEBBIT_INSTALL_PATH.'/src/CWebbit/bootstrap.php');
+require(WEBBIT_INSTALL_PATH.'/src/bootstrap.php');
 
 $ly = CWebbit::Instance();
 

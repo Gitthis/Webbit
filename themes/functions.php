@@ -11,7 +11,7 @@
 function get_debug() {
   $ly = CWebbit::Instance();
   $html = null;
-  if(isset($ly->config['debug']['display-webbit'])) {
+  if(isset($ly->config['debug']['display-webbit']) && $ly->config['debug']['display-webbit']) {
     $html = "<hr><h3>Debuginformation</h3><p>The content of CWebbit:</p><pre>" . htmlent(print_r($ly, true)) . "</pre>";
   }
   return $html;
@@ -27,10 +27,17 @@ function base_url($url) {
 
 
 /**
+* Prepend the theme_url, which is the url to the current theme directory.
+*/
+function theme_url($url) {
+  $ly = CWebbit::Instance();
+  return "{$ly->request->base_url}themes/{$ly->config['theme']['name']}/{$url}";
+}
+
+
+/**
 * Return the current url.
 */
 function current_url() {
   return CWebbit::Instance()->request->current_url;
 }
-
-

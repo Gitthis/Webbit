@@ -6,7 +6,15 @@
 /**
  * Add static entries in the template file. 
  */
-$ly->data['header'] = '<h1>Header: Webbit</h1>';
+/**
+* Add static entries for use in the template file.
+*/
+$ly->data['header'] = 'Webbit';
+$ly->data['slogan'] = 'A PHP-based MVC-inspired CMF';
+$ly->data['favicon'] = theme_url('logo.png');
+$ly->data['logo'] = theme_url('logo.png');
+$ly->data['logo_width'] = 80;
+$ly->data['logo_height'] = 80;
 $ly->data['footer'] = <<<EOD
 <p>Footer: &copy; Webbit by Daniel R</p>
 

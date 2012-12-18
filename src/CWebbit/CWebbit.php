@@ -1,70 +1,77 @@
 <?php
 /**
- * Main class for Webbit, holds everything.
- *
- * @package WebbitCore
- */
+* Main class for Webbit, holds everything.
+*
+* @package WebbitCore
+*/
 class CWebbit implements ISingleton {
 
-  private static $instance = null;
+private static $instance = null;
 
-  /**
-   * Constructor
-   */
-  protected function __construct() {
-    // include the site specific config.php and create a ref to $ly to be used by config.php
-    $ly = &$this;
+/**
+* Constructor
+*/
+protected function __construct() {
+// include the site specific config.php and create a ref to $ly to be used by config.php
+$ly = &$this;
     require(WEBBIT_SITE_PATH.'/config.php');
-  }
-  
-  
-  /**
-   * Singleton pattern. Get the instance of the latest created object or create a new one. 
-   * @return CWebbit The instance of this class.
-   */
-  public static function Instance() {
-    if(self::$instance == null) {
-      self::$instance = new CWebbit();
-    }
-    return self::$instance;
-  }
-  
 
+// Start a named session
+session_name($this->config['session_name']);
+session_start();
+
+// Set default date/time-zone
+date_default_timezone_set($this->config['timezone']);
+  }
+  
+  
   /**
-   * Frontcontroller, check url and route to controllers.
-   */
+* Singleton pattern. Get the instance of the latest created object or create a new one.
+* @return CWebbit The instance of this class.
+*/
+public static function Instance() {
+if(self::$instance == null) {
+self::$instance = new CWebbit();
+}
+return self::$instance;
+}
+
+
+/**
+* Frontcontroller, check url and route to controllers.
+*/
   public function FrontControllerRoute() {
     // Take current url and divide it in controller, method and parameters
     $this->request = new CRequest($this->config['url_type']);
     $this->request->Init($this->config['base_url']);
     $controller = $this->request->controller;
-    $method     = $this->request->method;
-    $arguments  = $this->request->arguments;
+    $method = $this->request->method;
+    $arguments = $this->request->arguments;
     
     // Is the controller enabled in config.php?
-    $controllerExists   = isset($this->config['controllers'][$controller]);
-    $controllerEnabled   = false;
-    $className          = false;
-    $classExists         = false;
+    $controllerExists = isset($this->config['controllers'][$controller]);
+    $controllerEnabled = false;
+    $className	= false;
+    $classExists = false;
 
     if($controllerExists) {
-      $controllerEnabled   = ($this->config['controllers'][$controller]['enabled'] == true);
-      $className          = $this->config['controllers'][$controller]['class'];
-      $classExists         = class_exists($className);
+      $controllerEnabled = ($this->config['controllers'][$controller]['enabled'] == true);
+      $className	= $this->config['controllers'][$controller]['class'];
+      $classExists = class_exists($className);
     }
     
     // Check if controller has a callable method in the controller class, if then call it
     if($controllerExists && $controllerEnabled && $classExists) {
       $rc = new ReflectionClass($className);
       if($rc->implementsInterface('IController')) {
-      	      $formattedMethod = str_replace(array('_', '-'), '', $method);
-        if($rc->hasMethod($method)) {
+         $formattedMethod = str_replace(array('_', '-'), '', $method);
+        if($rc->hasMethod($formattedMethod)) {
           $controllerObj = $rc->newInstance();
-          $methodObj = $rc->getMethod($method);
+          $methodObj = $rc->getMethod($formattedMethod);
           if($methodObj->isPublic()) {
             $methodObj->invokeArgs($controllerObj, $arguments);
           } else {
-            die("404. " . get_class() . ' error: Controller method not public.');          
+            die("404. " . get_class() . ' error: Controller method not public.');
           }
         } else {
           die("404. " . get_class() . ' error: Controller does not contain method.');
@@ -72,21 +79,21 @@ class CWebbit implements ISingleton {
       } else {
         die('404. ' . get_class() . ' error: Controller does not implement interface IController.');
       }
-    } 
-    else { 
+    }
+    else {
       die('404. Page is not found.');
     }
   }
   
   
-  /**
-   * ThemeEngineRender, renders the reply of the request to HTML or whatever.
-   */
+/**
+* ThemeEngineRender, renders the reply of the request to HTML or whatever.
+*/
   public function ThemeEngineRender() {
     // Get the paths and settings for the theme
-    $themeName   = $this->config['theme']['name'];
-    $themePath   = WEBBIT_INSTALL_PATH . "/themes/{$themeName}";
-    $themeUrl    = $this->request->base_url . "themes/{$themeName}";
+    $themeName = $this->config['theme']['name'];
+    $themePath = WEBBIT_INSTALL_PATH . "/themes/{$themeName}";
+    $themeUrl	= $this->request->base_url . "themes/{$themeName}";
     
     // Add stylesheet path to the $ly->data array
     $this->data['stylesheet'] = "{$themeUrl}/style.css";
@@ -100,8 +107,8 @@ class CWebbit implements ISingleton {
     }
 
     // Extract $ly->data to own variables and handover to the template file
-    extract($this->data);      
+    extract($this->data);
     include("{$themePath}/default.tpl.php");
   }
 
-} 
+}
