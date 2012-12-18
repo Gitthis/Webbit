@@ -74,3 +74,10 @@ $ly->config['theme'] = array(
   // The name of the theme in the theme directory
   'name' => 'core',
 );
+
+
+/**
+* Set database(s).
+*/
+$ly->config['database'][0]['dsn'] = 'sqlite:' . WEBBIT_SITE_PATH . '/data/.ht.sqlite';
+
