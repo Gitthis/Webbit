@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title><?=$title?></title>
   <link rel="stylesheet" href="<?=$stylesheet?>">
+  <link rel="shortcut icon" href="<?=$favicon?>">
 </head>
 <body>
   <div id="header">
@@ -16,11 +17,13 @@
  </div> 
   
   <div id="main" role="main">
-    <?=$main?>
-    <?=get_debug()?>
+  <?=get_messages_from_session()?>
+    <?=@$main?>
+    <?=render_views()?>
   </div>
   <div id="footer">
     <?=$footer?>
+    <?=get_debug()?>
   </div>
 </body>
 </html> 

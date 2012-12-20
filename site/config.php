@@ -14,7 +14,17 @@ ini_set('display_errors', 1);
 /**
 * Set what to show as debug or developer information in the get_debug() theme helper.
 */
-$ly->config['debug']['display-webbit'] = false;
+$ly->config['debug']['webbit'] = false;
+$ly->config['debug']['session'] = false;
+$ly->config['debug']['timer'] = true;
+$ly->config['debug']['db-num-queries'] = true;
+$ly->config['debug']['db-queries'] = true;
+
+
+/**
+* Set database(s).
+*/
+$ly->config['database'][0]['dsn'] = 'sqlite:' . WEBBIT_SITE_PATH . '/data/.ht.sqlite';
 
 
 /**
@@ -26,25 +36,31 @@ $ly->config['debug']['display-webbit'] = false;
 */
 $ly->config['url_type'] = 1;
 
+
 /**
 * Set a base_url to use another than the default calculated
 */
 $ly->config['base_url'] = null;
 
+
 /**
 * Define session name
 */
 $ly->config['session_name'] = preg_replace('/[:\.\/-_]/', '', $_SERVER["SERVER_NAME"]);
+$ly->config['session_key'] = 'webbit';
+
 
 /**
 * Define server timezone
 */
 $ly->config['timezone'] = 'Europe/Stockholm';
 
+
 /**
 * Define internal character encoding
 */
 $ly->config['character_encoding'] = 'UTF-8';
+
 
 /**
 * Define language
@@ -74,10 +90,3 @@ $ly->config['theme'] = array(
   // The name of the theme in the theme directory
   'name' => 'core',
 );
-
-
-/**
-* Set database(s).
-*/
-$ly->config['database'][0]['dsn'] = 'sqlite:' . WEBBIT_SITE_PATH . '/data/.ht.sqlite';
-
