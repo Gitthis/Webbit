@@ -31,7 +31,7 @@ public function __construct() { ; }
 * @param $value string to be set as title.
 */
 public function SetTitle($value) {
-$this->SetVariable('title', $value);
+    return $this->SetVariable('title', $value);
   }
 
 
@@ -42,6 +42,7 @@ $this->SetVariable('title', $value);
 */
 public function SetVariable($key, $value) {
 $this->data[$key] = $value;
+return $this;
   }
 
 
@@ -53,6 +54,7 @@ $this->data[$key] = $value;
 */
 public function AddInclude($file, $variables=array()) {
 $this->views[] = array('type' => 'include', 'file' => $file, 'variables' => $variables);
+return $this;
   }
 
 
@@ -72,6 +74,3 @@ foreach($this->views as $view) {
 
 
 }
-
-
-

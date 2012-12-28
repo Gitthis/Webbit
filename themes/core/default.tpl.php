@@ -8,6 +8,9 @@
 </head>
 <body>
   <div id="header">
+   <div id='login-menu'>
+<?=login_menu()?>
+</div>
     <div id='banner'>
   
 <a href='<?=base_url()?>'><img class='site-logo' src='<?=$logo?>' alt='logo' width='<?=$logo_width?>' height='<?=$logo_height?>' /></a>
@@ -20,10 +23,11 @@
   <?=get_messages_from_session()?>
     <?=@$main?>
     <?=render_views()?>
-  </div>
+ 
   <div id="footer">
+  
     <?=$footer?>
     <?=get_debug()?>
-  </div>
+  </div> </div>
 </body>
 </html> 
