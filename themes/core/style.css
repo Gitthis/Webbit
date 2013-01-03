@@ -91,12 +91,15 @@ a:active {}
 /**
 * Forms
 */
-input{font:inherit;}
+input,textarea{font:inherit;}
 input[readonly]{color:#666;}
 label{font-size:smaller;}
 .validation-failed{border:2px solid red;}
 .validation-message{color:red;font-size:smaller;}
 .form-action-link{font-size:smaller;}
+
+.content-edit input[type=text]{width:30em;}
+.content-edit textarea{width:40em;height:15em;}
 
 
 
@@ -119,6 +122,9 @@ padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
 .info a { color: #205791; }
 
 
+
 /**
 * Misc
 */
+.smaller-text{font-size:smaller;}
+.silent{color:#999;}
