@@ -38,8 +38,7 @@ $this->session = new CSession($this->config['session_key']);
 $this->session->PopulateFromSession();
 
 // Set default date/time-zone
-//date_default_timezone_set($this->config['timezone']);
-	date_default_timezone_set('UTC');
+date_default_timezone_set('UTC');
 
 // Create a database object.
 if(isset($this->config['database'][0]['dsn'])) {
@@ -133,7 +132,7 @@ return self::$instance;
     $themeUrl	= $this->request->base_url . "themes/{$themeName}";
     
     // Add stylesheet path to the $ly->data array
-    $this->data['stylesheet'] = "{$themeUrl}/style.css";
+    $this->data['stylesheet'] = "{$themeUrl}/".$this->config['theme']['stylesheet'];
 
     // Include the global functions.php and the functions.php that are part of the theme
     $ly = &$this;
