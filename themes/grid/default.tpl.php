@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title><?=$title?></title>
-  <link rel='stylesheet' type='text/css' href='style.php' /> 
+  <link rel='stylesheet' type='text/css' href='themes/grid/style.php' /> 
  <!--  <link rel="stylesheet" href="<?=$stylesheet?>"/> -->
   <link rel="shortcut icon" href="<?=$favicon?>"/>
 </head>
