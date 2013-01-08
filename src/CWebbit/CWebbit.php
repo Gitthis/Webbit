@@ -114,7 +114,7 @@ return self::$instance;
   }
   
   
-/**
+  /**
 * ThemeEngineRender, renders the reply of the request to HTML or whatever.
 */
   public function ThemeEngineRender() {
@@ -122,9 +122,7 @@ return self::$instance;
     $this->session->StoreInSession();
   
     // Is theme enabled?
-    if(!isset($this->config['theme'])) {
-      return;
-    }
+    if(!isset($this->config['theme'])) { return; }
     
     // Get the paths and settings for the theme
     $themeName = $this->config['theme']['name'];
@@ -133,7 +131,7 @@ return self::$instance;
     
     // Add stylesheet path to the $ly->data array
     $this->data['stylesheet'] = "{$themeUrl}/".$this->config['theme']['stylesheet'];
-
+    
     // Include the global functions.php and the functions.php that are part of the theme
     $ly = &$this;
     include(WEBBIT_INSTALL_PATH . '/themes/functions.php');
@@ -145,7 +143,8 @@ return self::$instance;
     // Extract $ly->data to own variables and handover to the template file
     extract($this->data);
     extract($this->views->GetData());
-    include("{$themePath}/default.tpl.php");
+    $templateFile = (isset($this->config['theme']['template_file'])) ? $this->config['theme']['template_file'] : 'default.tpl.php';
+    include("{$themePath}/{$templateFile}");
   }
 
 }
