@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8"/>
   <title><?=$title?></title>
-   <link rel='stylesheet' type='text/css' href='themes/grid/style.php' /> 
- <!-- <link rel="stylesheet" href="<?=$stylesheet?>"/> -->
   <link rel="shortcut icon" href="<?=$favicon?>"/>
+ <!--  <link rel='stylesheet' type='text/css' href='themes/grid/style.php' /> -->
+  <link rel="stylesheet" href="<?=$stylesheet?>"/> 
+  
 </head>
 <body>
 <div id='wrap-header'>

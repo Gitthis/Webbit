@@ -59,6 +59,9 @@ audio:not([controls]){display:none;}
 
 /* Wrap elements to site width in grid layout*/
 .wrap() {width:@total-width;margin:0 auto;.clearfix();}
+.alwaysShowScrollbar() {overflow:-moz-scrollbars-vertical;overflow-y:scroll;}
+
+
 
 @magic-number:22px;
 
@@ -150,19 +153,20 @@ tfoot{font-style:italic;}
 
 
 
-/**
-* Forms
-*/
+/** --------------------------------------------------------------
+ * Forms
+ */
 input,textarea{font:inherit;}
-input[readonly]{color:@color5;}
+input[readonly]{color:#666;}
 label{font-size:smaller;}
 .validation-failed{border:2px solid red;}
 .validation-message{color:red;font-size:smaller;}
 .form-action-link{font-size:smaller;}
+textarea{width:100%;height:8em;}
 
-.content-edit {
-		input[type=text]{width:30em;}
-		textarea{width:40em;height:15em;}
+.content-edit{
+  input[type=text]{width:30em;}
+  textarea{width:40em;height:15em;}
 }
 
 
@@ -231,6 +235,25 @@ a {
 }
 
 
+
+/** --------------------------------------------------------------
+ * Navbar
+ */
+#navbar{
+  ul.menu{list-style-type:none;padding:2px 8px;margin:0;
+    li{padding:0;margin:0;display:inline;
+      a{padding:6px 8px;text-decoration:none;border:2px solid transparent;
+        &:hover{background:#ddd;border:2px solid #999;}
+        &.selected{background:#ccc;border:2px solid #999;}
+      }
+    }
+  }
+}
+
+
+
+
+
 	
 /** --------------------------------------------------------------
  * The flash area.
@@ -255,7 +278,8 @@ a {
 
 
 
-/** ---------------------------------------------------------------
+
+/** --------------------------------------------------------------
  * The main content area.
  *
  */
@@ -264,7 +288,11 @@ a {
 #main{}
 
 #primary{.column(8);}
-#sidebar{.column(4);}
+#sidebar{.column(4);
+  .box{border-top:4px double #ccc;padding-top:@magic-number/2;margin-bottom:@magic-number*2.5-4px;
+    h4{}
+  }
+}
 
 
 /** --------------------------------------------------------------
@@ -304,56 +332,7 @@ background-color:lighten(@bgtest,10%);}
  */
 #outer-wrap-footer{background-color:@bgcolor1;border-top:1px solid #bbb;}
 #inner-wrap-footer{.wrap();padding-top:@magic-number;padding-bottom:@magic-number;}
-#footer{.column(12);font-size:0.80em;color:#666;}
-
-
-
-
-
-
-
-
-
-/* ---------------------------CODE BELOW NOT IN USE-----------------------------------------------
-                        --------------------------
---------------------------------------------------------------------------------------------
-#header,
-#main
-{
-  margin:0 auto;
-  width:970px;
-  background-color:@bgcolor2;
-  padding: 1em 1em 1em 2em;
-  
-}
-
-#main
-{
-  margin:0 auto;
-  width:970px;
-  background-color:@bgcolor2;
-  padding: 1em 1em 2em 2em;
-  
-}
-
-#footer {
-	margin:0 auto;
-	border-top: @border1 ;
-	background: @bgcolor2;
-	font-size:13px;
-	padding: 1em;
-	position: bottom;
-	margin-top: 20px;
-}
-
- ---------------------------------CODE ABOVE NOT IN USE-----------------------------------
-                            ------------------------------
- -------------------------------------------------------------------------------------  */
-
-
-
-
-
+#footer{.column(12);color:#666;}
 
 
 /** --------------------------------------------------------------
