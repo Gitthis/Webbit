@@ -28,43 +28,24 @@ audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 audio:not([controls]){display:none;}
 [hidden]{display:none;}
 
+
 /** --------------------------------------------------------------
-* semantic.gs
-*/
+ * semantic.gs
+ */
 @import url(semantic.gs/stylesheets/less/grid.less);
 
 
 /** --------------------------------------------------------------
-* Settings
-*/
-@color1: black;
-@color2: blue;
-@color3: gold;
-@color4: salmon;
-@color5: #666;
-@bgcolor1: lightblue;
-@bgcolor2: white;
-@bgcolor3: #eee;
-@font1: 1em Verdana, Arial, Helvetica, sans-serif;
-@border1: 2px solid darkblue;
-.hover1(){text-decoration:none;color: @color3;}
-.hover2(){text-decoration:underline; font-style: italic; color: @color3;}
-
-
+ * Settings
+ */
+@bgcolor1: #eee;
+@bgcolor2: #fff;
 @bgtest: hsla(0,0%,90%,0.5);
-
-
-
-
+@color: #333;
 
 /* Wrap elements to site width in grid layout*/
 .wrap() {width:@total-width;margin:0 auto;.clearfix();}
 .alwaysShowScrollbar() {overflow:-moz-scrollbars-vertical;overflow-y:scroll;}
-
-
-
-@magic-number:22px;
-
 
 
 /** --------------------------------------------------------------
@@ -150,9 +131,6 @@ tbody tr{border-bottom:1px solid #eee;
 tfoot{font-style:italic;}
 
 
-
-
-
 /** --------------------------------------------------------------
  * Forms
  */
@@ -170,70 +148,45 @@ textarea{width:100%;height:8em;}
 }
 
 
-
-
-
-html {overflow-y: scroll; color: @color1;background-color:@bgcolor1;
+/** --------------------------------------------------------------
+ * HTML & Body
+ */
+html{background-color:@bgcolor1;.alwaysShowScrollbar()}
+body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
+// &:hover{background:#fff url(grid_12_60_20.png) repeat-y center top;}
 }
-
-body	{
-	margin:0px auto; 
-	color:@color1;
-	background-color:@bgcolor2;
-	font: @font;
-//	&:hover{background:#fff url(grid_12_60_20.png) repeat-y center top;}
-}
-
-
-
-/**
-* Links
-*/
-a {
-	color:@color2;
-	&:link {}
-	&:visited {}
-	&:hover, a:focus {.hover1()}
-	&:active {}
-}
-
 
 
 /** --------------------------------------------------------------
-* The header area.
-*
-*/
+ * The header area.
+ *
+ */
 .tablecell() {display:table-cell;vertical-align:middle;text-align:center;}
-#outer-wrap-header{height:@magic-number*4;margin-top:@magic-number/2;margin-bottom:@magic-number/2;}
+#outer-wrap-header{padding-top:@magic-number/2;margin-bottom:@magic-number/2;}
 #inner-wrap-header{.wrap();}
 #header{.column(12);}
 
 
-/**
-* Login menu
-*/
-#login-menu{
-	float:right;
-	font-size:13px;
-	img.gravatar{vertical-align:middle;}
-	a{text-decoration:none;}
-	a:hover{.hover2()}
+/** --------------------------------------------------------------
+ * Login menu
+ */
+#login-menu{float:right;font-size:0.95em;
+  img.gravatar{vertical-align:middle;}
+  a{text-decoration:none;}
+  a:hover{text-decoration:underline;}
 }
 
-	
 
 /** --------------------------------------------------------------
-* Banner
-*/
+ * Banner
+ */
 #banner {display:table;margin-bottom:@magic-number/2;
   #site-logo{.tablecell();}
   #site-title{.tablecell();font-size:2.5em;padding-left:0.2em;text-shadow:#ccc 2px -2px 2px;
-    a{text-decoration:none; color:@color4;}
-    a:hover{.hover1()}
+    a{text-decoration:none;}
   }
   #site-slogan{.tablecell();font-size:1.5em;padding-left:10px;}
 }
-
 
 
 /** --------------------------------------------------------------
@@ -251,10 +204,6 @@ a {
 }
 
 
-
-
-
-	
 /** --------------------------------------------------------------
  * The flash area.
  *
@@ -275,8 +224,6 @@ a {
 #featured-first,
 #featured-middle,
 #featured-last{.column(4);height:100%;}
-
-
 
 
 /** --------------------------------------------------------------
@@ -308,7 +255,6 @@ a {
 #triptych-last{.column(4);height:100%;}
 
 
-
 /** --------------------------------------------------------------
  * The footer column area.
  *
@@ -320,10 +266,8 @@ a {
 #footer-column-one,
 #footer-column-two,
 #footer-column-three,
-#footer-column-four{.column(3);font-size:0.9em;margin-top:1em;height:100%;
+#footer-column-four{.column(3);margin-top:1em;height:100%;
 background-color:lighten(@bgtest,10%);}
-
-
 
 
 /** --------------------------------------------------------------
@@ -333,6 +277,19 @@ background-color:lighten(@bgtest,10%);}
 #outer-wrap-footer{background-color:@bgcolor1;border-top:1px solid #bbb;}
 #inner-wrap-footer{.wrap();padding-top:@magic-number;padding-bottom:@magic-number;}
 #footer{.column(12);color:#666;}
+
+
+/** --------------------------------------------------------------
+ * Links
+ */
+.hover(){text-decoration:none;color:#5C0A0A;}
+a{color:inherit;
+  &:link{}
+  &:visited{}
+  &:hover{.hover()}
+  &:focus{.hover()}
+  &:active{}
+}
 
 
 /** --------------------------------------------------------------
@@ -356,4 +313,6 @@ padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
  */
 .smaller-text{font-size:smaller;}
 .silent{color:#999;}
+
+
 

@@ -1,62 +1,28 @@
-/** 
- * Description: Core theme for Webbit
- */
-
 /**
- * Structure
- */
-html{}
-body{
-  background-color:lightblue;
-  font: 1em Verdana, Arial, Helvetica, sans-serif;
-}
-
-/**
-* Headings
+* Description: Core theme for Lydia
 */
-h1{border-bottom:3px double #ccc;padding-bottom:4px;}
-h2{border-bottom:1px solid #ccc;padding-bottom:4px;}
 
 /**
-* Links
+* Structure
 */
-a {color:inherit;}
-a:link {}
-a:visited {}
-a:hover,
-a:focus {text-decoration:none;color:#5C0A0A;}
-a:active {}
+html{background-color:#eee;}
+body{margin:0;padding:0;color:#333;background-color:#fff;
+  font: 1em Verdana, Arial, Helvetica, sans-serif;}
 
-
+#wrap-header {}
+#wrap-main {}
+#wrap-footer {border-top:1px solid #ccc;background-color:#eee;}
 
 #header,
-#main
-{
-  margin:0 auto;
-  width:970px;
-  background-color:#fff;
-  padding: 1em 1em 1em 2em;
-  
-}
-#main
-{
-  margin:0 auto;
-  width:970px;
-  background-color:#fff;
-  padding: 1em 1em 2em 2em;
-  
-}
+#main,
+#footer {margin:0 auto;width:970px;padding:8px;}
+#main,
+#footer {margin-bottom:16px;}
 
-#footer {margin:0 auto;
- border-top: 2px solid darkblue ;
-  background: white;
-  font-size:13px;
- padding: 1em;
- position: bottom;
- margin-top: 20px;
-}
-
-
+#header,
+#main {background-color:#fff;}
+#main {min-height:300px;}
+#footer {font-size:0.80em;color:#666;background-color:#eee;}
 
 
 /**
@@ -69,8 +35,9 @@ a:active {}
 
 
 
-
-
+/**
+* Banner
+*/
 #banner {display:table;margin-bottom:10px;}
 
 .site-logo,
@@ -79,13 +46,31 @@ a:active {}
 
 .site-logo {}
 .site-title,
-.site-slogan {font-family:monospace;line-height:0;padding-left:20px;color:blue;
+.site-slogan {font-family:monospace;line-height:0;padding-left:20px;color:#333;
   text-shadow:#ccc 2px -2px 2px;}
 .site-title {font-size:4em;font-weight:bold;}
-.site-slogan {font-size:1.5em;text-align:left;}
+.site-slogan {font-size:1.5em;}
 
-.site-title a {text-decoration:none;color:salmon;}
+.site-title a {text-decoration:none;color:inherit;}
 .site-title a:hover {text-decoration:none;color:inherit;}
+
+
+/**
+* Links
+*/
+a {color:inherit;}
+a:link {}
+a:visited {}
+a:hover,
+a:focus {text-decoration:none;color:#5C0A0A;}
+a:active {}
+
+
+/**
+* Headings
+*/
+h1{border-bottom:3px double #ccc;padding-bottom:4px;}
+h2{border-bottom:1px solid #ccc;padding-bottom:4px;}
 
 
 /**
@@ -102,10 +87,6 @@ label{font-size:smaller;}
 .content-edit textarea{width:40em;height:15em;}
 
 
-
-
-
-
 /**
 * User feedback message wrappers.
 */
@@ -120,7 +101,6 @@ padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
 .notice a, .warning a { color: #514721; }
 .success a { color: #264409; }
 .info a { color: #205791; }
-
 
 
 /**

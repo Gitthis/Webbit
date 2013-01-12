@@ -4,11 +4,10 @@
   <meta charset='utf-8'/>
   <title><?=$title?></title>
 <link rel='shortcut icon' href='<?=theme_url($favicon)?>'/>
- <link rel='stylesheet' href='<?=theme_url($stylesheet)?>'/>
+<link rel='stylesheet' href='<?=theme_url($stylesheet)?>'/>
 <?php if(isset($inline_style)): ?><style><?=$inline_style?></style><?php endif; ?>
 </head>
 <body>
-
 
 <div id='outer-wrap-header'>
 <div id='inner-wrap-header'>
@@ -17,7 +16,7 @@
 <div id='banner'>
 <a href='<?=base_url()?>'><img id='site-logo' src='<?=theme_url($logo)?>' alt='logo' width='<?=$logo_width?>' height='<?=$logo_height?>' /></a>
 <span id='site-title'><a href='<?=base_url()?>'><?=$header?></a></span>
- <span id='site-slogan'><?=$slogan?></span>
+<span id='site-slogan'><?=$slogan?></span>
 </div>
 <?php if(region_has_content('navbar')): ?>
 <div id='navbar'><?=render_views('navbar')?></div>
@@ -25,7 +24,6 @@
 </div>
 </div>
 </div>
-
 
 <?php if(region_has_content('flash')): ?>
 <div id='outer-wrap-flash'>

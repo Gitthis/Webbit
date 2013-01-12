@@ -1,4 +1,4 @@
-@import url(semantic.gs/stylesheets/less/grid.less);
+a:4:{s:4:"root";s:10:"style.less";s:8:"compiled";s:7423:"@import url(semantic.gs/stylesheets/less/grid.less);
 html,
 body,
 div,
@@ -534,3 +534,4 @@ a:focus {
 .silent {
   color: #999;
 }
+";s:5:"files";a:1:{s:38:"C:\wamp\www\stylephp-master\style.less";i:1358030195;}s:7:"updated";i:1358030200;}
