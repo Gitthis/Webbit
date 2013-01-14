@@ -223,3 +223,6 @@ function render_views($region='default') {
 function region_has_content($region='default' /*...*/) {
   return CWebbit::Instance()->views->RegionHasView(func_get_args());
 }
+
+
+

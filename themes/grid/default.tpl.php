@@ -4,8 +4,8 @@
   <meta charset='utf-8'/>
   <title><?=$title?></title>
 <link rel='shortcut icon' href='<?=$favicon?>'/>
- <!--  <link rel='stylesheet' href='<?=$stylesheet?>'/>-->
- <link rel='stylesheet' type='text/css' href='themes/grid/style.php' /> 
+<link rel='stylesheet' href='<?=$stylesheet?>'/>
+<!--   <link rel='stylesheet' type='text/css' href='themes/grid/style.php' />-->
 </head>
 <body>
 <div id='wrap-header'>
@@ -35,3 +35,6 @@
 </div>
 </body>
 </html>
+
+
+

@@ -28,24 +28,40 @@ audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 audio:not([controls]){display:none;}
 [hidden]{display:none;}
 
-
 /** --------------------------------------------------------------
- * semantic.gs
- */
+* semantic.gs
+*/
 @import url(semantic.gs/stylesheets/less/grid.less);
 
 
 /** --------------------------------------------------------------
- * Settings
- */
-@bgcolor1: #eee;
-@bgcolor2: #fff;
+* Settings
+*/
+@color1: green;
+@color2: blue;
+@color3: gold;
+@color4: salmon;
+@color5: #666;
+@bgcolor1: lightblue;
+@bgcolor2: white;
+@bgcolor3: #eee;
+@font1: 1em Verdana, Arial, Helvetica, sans-serif;
+@border1: 2px solid darkblue;
+.hover1(){text-decoration:none;color: @color3;}
+.hover2(){text-decoration:underline; font-style: italic; color: @color3;}
+
+
 @bgtest: hsla(0,0%,90%,0.5);
-@color: #333;
+
+
+
+
 
 /* Wrap elements to site width in grid layout*/
 .wrap() {width:@total-width;margin:0 auto;.clearfix();}
-.alwaysShowScrollbar() {overflow:-moz-scrollbars-vertical;overflow-y:scroll;}
+
+@magic-number:22px;
+
 
 
 /** --------------------------------------------------------------
@@ -131,62 +147,90 @@ tbody tr{border-bottom:1px solid #eee;
 tfoot{font-style:italic;}
 
 
-/** --------------------------------------------------------------
- * Forms
- */
+
+
+
+/**
+* Forms
+*/
 input,textarea{font:inherit;}
-input[readonly]{color:#666;}
+input[readonly]{color:@color5;}
 label{font-size:smaller;}
 .validation-failed{border:2px solid red;}
 .validation-message{color:red;font-size:smaller;}
 .form-action-link{font-size:smaller;}
-textarea{width:100%;height:8em;}
 
-.content-edit{
-  input[type=text]{width:30em;}
-  textarea{width:40em;height:15em;}
+.content-edit {
+		input[type=text]{width:30em;}
+		textarea{width:40em;height:15em;}
 }
 
 
-/** --------------------------------------------------------------
- * HTML & Body
- */
-html{background-color:@bgcolor1;.alwaysShowScrollbar()}
-body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
-// &:hover{background:#fff url(grid_12_60_20.png) repeat-y center top;}
+
+
+
+html {overflow-y: scroll; color: @color1;background-color:@bgcolor1;
+}
+
+body	{
+	margin:0px auto; 
+	color:@color1;
+	background-color:@bgcolor2;
+	font: @font;
+//	&:hover{background:#fff url(grid_12_60_20.png) repeat-y center top;}
 }
 
 
+
+/**
+* Links
+*/
+a {
+	color:@color2;
+	&:link {}
+	&:visited {}
+	&:hover, a:focus {.hover1()}
+	&:active {}
+}
+
+
+
 /** --------------------------------------------------------------
- * The header area.
- *
- */
+* The header area.
+*
+*/
 .tablecell() {display:table-cell;vertical-align:middle;text-align:center;}
-#outer-wrap-header{padding-top:@magic-number/2;margin-bottom:@magic-number/2;}
+#outer-wrap-header{height:@magic-number*4;margin-top:@magic-number/2;margin-bottom:@magic-number/2;}
 #inner-wrap-header{.wrap();}
 #header{.column(12);}
 
 
-/** --------------------------------------------------------------
- * Login menu
- */
-#login-menu{float:right;font-size:0.95em;
-  img.gravatar{vertical-align:middle;}
-  a{text-decoration:none;}
-  a:hover{text-decoration:underline;}
+/**
+* Login menu
+*/
+#login-menu{
+	float:right;
+	font-size:13px;
+	img.gravatar{vertical-align:middle;}
+	a{text-decoration:none;}
+	a:hover{.hover2()}
 }
 
+	
 
 /** --------------------------------------------------------------
- * Banner
- */
+* Banner
+*/
 #banner {display:table;margin-bottom:@magic-number/2;
   #site-logo{.tablecell();}
   #site-title{.tablecell();font-size:2.5em;padding-left:0.2em;text-shadow:#ccc 2px -2px 2px;
-    a{text-decoration:none;}
+    a{text-decoration:none; color:@color4;}
+    a:hover{.hover1()}
   }
   #site-slogan{.tablecell();font-size:1.5em;padding-left:10px;}
 }
+
+
 
 
 /** --------------------------------------------------------------
@@ -204,6 +248,16 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 }
 
 
+
+
+
+
+
+
+
+
+
+	
 /** --------------------------------------------------------------
  * The flash area.
  *
@@ -226,7 +280,8 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 #featured-last{.column(4);height:100%;}
 
 
-/** --------------------------------------------------------------
+
+/** ---------------------------------------------------------------
  * The main content area.
  *
  */
@@ -235,11 +290,7 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 #main{}
 
 #primary{.column(8);}
-#sidebar{.column(4);
-  .box{border-top:4px double #ccc;padding-top:@magic-number/2;margin-bottom:@magic-number*2.5-4px;
-    h4{}
-  }
-}
+#sidebar{.column(4);}
 
 
 /** --------------------------------------------------------------
@@ -255,6 +306,7 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 #triptych-last{.column(4);height:100%;}
 
 
+
 /** --------------------------------------------------------------
  * The footer column area.
  *
@@ -266,8 +318,10 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 #footer-column-one,
 #footer-column-two,
 #footer-column-three,
-#footer-column-four{.column(3);margin-top:1em;height:100%;
+#footer-column-four{.column(3);font-size:0.9em;margin-top:1em;height:100%;
 background-color:lighten(@bgtest,10%);}
+
+
 
 
 /** --------------------------------------------------------------
@@ -276,20 +330,56 @@ background-color:lighten(@bgtest,10%);}
  */
 #outer-wrap-footer{background-color:@bgcolor1;border-top:1px solid #bbb;}
 #inner-wrap-footer{.wrap();padding-top:@magic-number;padding-bottom:@magic-number;}
-#footer{.column(12);color:#666;}
+#footer{.column(12);font-size:0.80em;color:#666;}
 
 
-/** --------------------------------------------------------------
- * Links
- */
-.hover(){text-decoration:none;color:#5C0A0A;}
-a{color:inherit;
-  &:link{}
-  &:visited{}
-  &:hover{.hover()}
-  &:focus{.hover()}
-  &:active{}
+
+
+
+
+
+
+
+/* ---------------------------CODE BELOW NOT IN USE-----------------------------------------------
+                        --------------------------
+--------------------------------------------------------------------------------------------
+#header,
+#main
+{
+  margin:0 auto;
+  width:970px;
+  background-color:@bgcolor2;
+  padding: 1em 1em 1em 2em;
+  
 }
+
+#main
+{
+  margin:0 auto;
+  width:970px;
+  background-color:@bgcolor2;
+  padding: 1em 1em 2em 2em;
+  
+}
+
+#footer {
+	margin:0 auto;
+	border-top: @border1 ;
+	background: @bgcolor2;
+	font-size:13px;
+	padding: 1em;
+	position: bottom;
+	margin-top: 20px;
+}
+
+ ---------------------------------CODE ABOVE NOT IN USE-----------------------------------
+                            ------------------------------
+ -------------------------------------------------------------------------------------  */
+
+
+
+
+
 
 
 /** --------------------------------------------------------------
@@ -313,3 +403,4 @@ padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
  */
 .smaller-text{font-size:smaller;}
 .silent{color:#999;}
+
