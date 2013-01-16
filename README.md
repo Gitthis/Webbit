@@ -89,21 +89,8 @@ Längst ner på sidan står det `'footer' => '<p>Webbit &copy; by Daniel R</p>',
 ### Byta titel och slogan
 Detta ändrar du också i `webbit/site/config.php` 
 Slogan står nu som `A PHP-based MVC-inspired CMF` men här kan du skriva in valfri text.
-Ovanför slogan skriver du över `Webbit` till den titel du hellre villa ha. 
-
-Här nedan visas exemplet från filen `webbit/site/config.php` där du kan göra dina ändringar för logo, titel, slogan, favicon, och footer.
-Kom ihåg att favicon är inställd på att visa samma bild som din logo.
-
-`'menu_to_region' => array('my-navbar'=>'navbar'),
-  'data' => array(
-      'header' => 'Webbit',
-      'slogan' => 'A PHP-based MVC-inspired CMF',
-      'favicon' => 'logo.png',
-      'logo' => 'logo.png',
-      'logo_width' => 80,
-      'logo_height' => 80,
-      'footer' => '<p>Webbit &copy; by Daniel R</p>',`
-      
+Ovanför slogan står det `'header' => 'Webbit',` här skriver du över `Webbit` till den titel du hellre villa ha. 
+  
 
 
 
