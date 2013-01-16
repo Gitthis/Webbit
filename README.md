@@ -83,7 +83,8 @@ Här visas nu alla blogginlägg och sidor. Leta upp din sida och klicka på 'vie
 
 ### Ändringar i footern
 Även footern ändrar du i filen `webbit/site/config.php`
-Längst ner på sidan står det `'footer' => '<p>Webbit &copy; by Daniel R</p>',` Men det är bara att byta ut `Webbit &copy; by Daniel R` mot någon annan text.
+Längst ner på sidan står det `'footer' => '<p>Webbit &copy; by Daniel R</p>',` Men det är bara att byta ut `Webbit &copy; by Daniel R` mot någon annan text
+som du vill ha.
 
 
 ### Byta titel och slogan
