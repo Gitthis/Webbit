@@ -1,23 +1,30 @@
-Webbit
-======
 
-Lydia, a PHP-based, MVC-inspired CMF
+Webbit, a PHP-based, MVC-inspired CMF
 ====================================
 
-This project is used while teaching advanced PHP-programming with Model View Controller (MVC)
-frameworks with a taste of Content Management Framework (CMF). 
+Webbit är gjort efter Lydia Tutorial. För en fullständig version av Lydia
+så klicka på nedan länk.
+* https://github.com/mosbth/lydia
 
-Material in below links are mainly in swedish.
-
-* http://dbwebb.se/lydia/current (try out the code)
-* http://dbwebb.se/f/123 (forum with some tutorials on how the code was built, only in swedish)
+Den här guiden förutsätter att du är van vid installationer av ramverk mm. 
 
 
-License
--------
 
-Lydia is licensed according to MIT-license. Will consider double licensing with GPL in the future.
-Any included external modules are subject to their own licensing.
+Installation
+------------
+
+* Klona Webbit från Github via `git clone git://github.com/Gitthis/Webbit.git`
+* Editera filen .htaccess så att den pekar på din installationsadress. Vid RewriteBase byter du alltså ut webbadressen `/~dara11/phpmvc/kmom08/webbit/`
+  till din egen installations adress/URL.
+* Ladda upp ramverket till din webbserver.
+* Se till att filen `webbit\site\data` är skrivbar genom `chmod 777 site/data`. I filezilla kan du högerklicka på
+`webbit\site\data` och välja filrättigheter och sedan skriva in 777 i fältet för Numeriskt värde.
+* Peka din webbläsare till adressen för din installation av webbit och surfa in på sidan.
+* Webbit måste sedan initiera moduler. DU gör detta genom att klicka på `module/install` nästan i mitten på sidan.
+
+* Nu är du klar med installationen. Nedan kan du läsa om några enkla saker som du kan ändra så som 
+logo, färger, typsnitt mm mm. 
+
 
 
 Use of external libraries
@@ -33,7 +40,7 @@ HTMLPurifier by Edward Z. Yang to filter & format HTML.
 * Website: http://htmlpurifier.org/ 
 * Version: 4.4.0 (2012-01-18)
 * License: LGPL
-* Lydia path: `src/CTextFilter/htmlpurifier-4.4.0-standalone`
+* Lydia path: `webbit\site\data`
 * Used by: `CTextFilter`
 
 
