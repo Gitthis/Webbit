@@ -31,7 +31,7 @@ Byte av logo, färger Navigeringsmeny mm
 ---------------------------------------
 
 ### Byta ut Logo
-Du kanske vill byta logo? Skapa då din egna logo i ett bildprogram och döp den till logo.png
+Du kanske vill byta logo? Skapa då din egna logo i ett bildprogram och döp den till logo.png.
 Förslagsvis ser du till att storleken är 80x80px redan nu. För om bilden är enormt stor så laddas 
 nämligen hela dess stolek även fast Webbit sedan "krymper" ner bilden till 80x80 själv. Man slipper
 onödig laddningstid alltså.
@@ -42,9 +42,9 @@ Placera din egna logo (logo.png) i katalogen `webbit/site/themes/mytheme` så at
 ### Byta färger mm
 Kul att du vill ändra lite på utseendet. Du gör detta genom css kod i filen `webbit/site/themes/mytheme/style.css`
 När du tittar i den filen så finns det redan några exempel på byten som du enkelt kan göra. Men vill du göra andra 
-ändringar så behöver du veta vilka färger mm som hör ihop med vad i CSS:n. Öppna då webbit/themes/grid/style.css 
-och kopiera de bitar du vill ändra till `webbit/site/themes/mytheme/style.css` Du gör sedan ändringarna i 
-`webbit/site/themes/mytheme/style.css` och laddar upp den filen på nytt.
+ändringar så behöver du veta vilka färger mm som hör ihop med vad i CSS:n. Öppna då `webbit/themes/grid/style.css` 
+och kopiera de bitar du vill ändra till `webbit/site/themes/mytheme/style.css` Du gör sedan ändringarna för de inkopierade koderna
+i `webbit/site/themes/mytheme/style.css` och laddar upp den filen på nytt.
 
 Är du inte van att arbeta med CSS så kan du surfa in på http://www.w3schools.com/css/ och gå igenom deras tutorial.
 Behöver du hjälp att välja färger och vill prova dig fram så rekommenderar jag http://www.workwithcolor.com/hsl-color-schemer-01.htm
@@ -62,7 +62,7 @@ Om du vill veta mer om det så titta gärna på denna länk: http://searchsecuri
 De filter som du kan skriva in är 
 * `bbcode` ett antal taggar kan användas för att skriva texten. Använd hakparanteser istället för < >. Läs mer här: http://www.bbcode.org/
 * `plain` är ren text. Inga HTML element tillåts. 
-* `htmlpurifu` Formattering och filtrering av HTML-kod på ett säkert sätt. Läs mer här: http://htmlpurifier.org/
+* `htmlpurify` Formattering och filtrering av HTML-kod på ett säkert sätt. Läs mer här: http://htmlpurifier.org/
 
 Om du skapade en page, alltså en sida, så kan du se den genom att klicka på `Content` och leta upp den i listan och klicka på `view`
 Men vill du ha en egen länk till den i navigeringsmenyn så gör du de ändringarna i filen `webbit/site/config.php`
@@ -96,13 +96,14 @@ Kom ihåg att favicon är inställd på att visa samma bild som din logo.
 
 `'menu_to_region' => array('my-navbar'=>'navbar'),
   'data' => array(
-    'header' => 'Webbit',
-    'slogan' => 'A PHP-based MVC-inspired CMF',
-    'favicon' => 'logo.png',
-    'logo' => 'logo.png',
-    'logo_width' => 80,
-    'logo_height' => 80,
-    'footer' => '<p>Webbit &copy; by Daniel R</p>',`
+      'header' => 'Webbit',
+      'slogan' => 'A PHP-based MVC-inspired CMF',
+      'favicon' => 'logo.png',
+      'logo' => 'logo.png',
+      'logo_width' => 80,
+      'logo_height' => 80,
+      'footer' => '<p>Webbit &copy; by Daniel R</p>',`
+      
 
 
 
