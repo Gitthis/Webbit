@@ -1,11 +1,35 @@
 /**
-* Description: Sample theme for site which extends the Webbit grid-theme.
+* Description: Sample theme for site which extends the Webbit grid-theme. I give you some examples below on what you can change in the file.
+If you want to make more detailed changes you have to dig in to css a bit more.  Good luck!
 */
 @import url(../../../themes/grid/style.css);
 
-html{background-color:#FFE2B3;}
-body{background-color:#D0DCE1;}
-#outer-wrap-header{background-color:#FFE2B3;border-bottom:2px solid #FFCE80}
-#outer-wrap-footer{background-color:#FFE2B3}
-a{color:#436370}
-#navbar ul.menu li a.selected{background-color:#D0DCE1;border-bottom:none;}
+html{background-color:green;}
+body{background-color:#00CCCC;}
+#outer-wrap-header{background-color:green;border-bottom:2px solid blue}
+#outer-wrap-footer{background-color:orange}
+
+/* Here you can change the color of the links*/
+a{color:black}
+
+#navbar ul.menu li a.selected{background-color:#00CCCC;border-bottom:none;}
+
+/* Here you can change the color for hover in the navbar */
+#navbar ul.menu li a:hover {
+  background:lightgreen;
+  border:2px solid #00CCCC;
+}
+
+/* Here you can change the font and color of h1, try a color!*/
+h1 {
+	color:red;
+	font-family:Old English, Georgia, Times, 'Times New Roman', serif;
+ }
+
+/* Here you can change the font and color of h2, try a color!*/
+h2 {
+	color:purple;
+	font-family:Harrington, Georgia, Times, 'Times New Roman', serif;
+ 
+}
+

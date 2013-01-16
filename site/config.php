@@ -126,11 +126,14 @@ $ly->config['menus'] = array(
     'content' => array('label'=>'Content', 'url'=>'content'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'guestbook'),
     'blog' => array('label'=>'Blog', 'url'=>'blog'),
+    
   ),
   'my-navbar' => array(
     'home' => array('label'=>'About Me', 'url'=>'my'),
     'blog' => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+   'content' => array('label'=>'Content', 'url'=>'content'),
+   'test1' => array('label'=>'Testsida', 'url'=>'page/view/9'),
   ),
 );
 
