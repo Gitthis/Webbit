@@ -133,8 +133,7 @@ $ly->config['menus'] = array(
     'blog' => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
    'content' => array('label'=>'Content', 'url'=>'content'),
-   'test1' => array('label'=>'Testsida', 'url'=>'page/view/9'),
-  ),
+   ),
 );
 
 

@@ -73,7 +73,8 @@ Under `'my-navbar'` som du ser några rader ner så har du koderna för länkarn
 Vill du ta bort en länk från navigeringsmenyn men inte dess innehåll, så kan du enkelt bara bortkommentera raden här.
 Lägg annars till en ny rad kod för din nyskapade sida. 
 
-Titta gärna hur jag har gjort för min Testsida som du kan se här: `'test1' => array('label'=>'Testsida', 'url'=>'page/view/9'),`
+Om jag skapade en ny sida det första jag gjorde när hela installationen var klar som jag kallade för Testsida, så skulle 
+jag alltså skriva länken såhär: `'test1' => array('label'=>'Testsida', 'url'=>'page/view/9'),`
 `'test1'` är min egen beskrivning av länken.
 `'Testsida'` är vad jag vill ska synas i navigeringsmenyn som man klickar på.
 `'page/view/9'` är själva länken. 
