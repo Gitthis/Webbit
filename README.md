@@ -6,7 +6,7 @@ Webbit är gjord efter Lydia Tutorial. För en fullständig version av Lydia
 så klicka på nedan länk.
 * https://github.com/mosbth/lydia
 
-Den här guiden förutsätter att du är van vid installationer av ramverk mm.              the key är en koty version                logo behöver inte vara exakt 80X80 men liten. användare som skapas automatiskt är doe root
+Den här guiden förutsätter att du är van vid installationer av ramverk mm.           
 
 
 
